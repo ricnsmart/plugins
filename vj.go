@@ -1,6 +1,12 @@
 package plugins
 
-import "go.mongodb.org/mongo-driver/bson/primitive"
+import (
+	"context"
+	"go.mongodb.org/mongo-driver/bson"
+	"go.mongodb.org/mongo-driver/bson/primitive"
+	"go.mongodb.org/mongo-driver/mongo"
+	"time"
+)
 
 type VJ struct {
 	ID           primitive.ObjectID `bson:"_id,omitempty"`
@@ -28,3 +34,13 @@ type Line struct {
 }
 
 type Lines []Line
+
+func (i *VJ) Find(id string, coll *mongo.Collection) (err error) {
+	ctx, _ := context.WithTimeout(context.Background(), 10*time.Second)
+
+	filter := bson.M{ID: id}
+
+	err = coll.FindOne(ctx, filter).Decode(i)
+
+	return
+}

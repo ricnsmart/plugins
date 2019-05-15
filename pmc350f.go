@@ -1,6 +1,12 @@
 package plugins
 
-import "go.mongodb.org/mongo-driver/bson/primitive"
+import (
+	"context"
+	"go.mongodb.org/mongo-driver/bson"
+	"go.mongodb.org/mongo-driver/bson/primitive"
+	"go.mongodb.org/mongo-driver/mongo"
+	"time"
+)
 
 type PMC350F struct {
 	ID           primitive.ObjectID `bson:"_id,omitempty"` // 为空则忽略，这样新建的时候就不会写入0值，等mongdb自己生成后就会返回_id
@@ -35,4 +41,14 @@ type PMC350F struct {
 		Ub  VoltageTemplate     `bson:"Ub"`
 		Uc  VoltageTemplate     `bson:"Uc"`
 	} `bson:"Metrics"`
+}
+
+func (i *PMC350F) Find(id string, coll *mongo.Collection) (err error) {
+	ctx, _ := context.WithTimeout(context.Background(), 10*time.Second)
+
+	filter := bson.M{ID: id}
+
+	err = coll.FindOne(ctx, filter).Decode(i)
+
+	return
 }

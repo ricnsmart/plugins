@@ -1,5 +1,9 @@
 package plugins
 
+import "go.mongodb.org/mongo-driver/mongo"
+
+const ID = "DeviceID"
+
 type MetricTemplate struct {
 	WarnSwitch  bool    `bson:"WarnSwitch"`
 	AlertSwitch bool    `bson:"AlertSwitch"`
@@ -45,4 +49,8 @@ type T4Template struct {
 	SMSSwitch   bool    `bson:"SMSSwitch"`
 	Warn        float32 `bson:"Warn"`
 	Alert       float32 `bson:"Alert"`
+}
+
+type Finder interface {
+	Find(id string, coll *mongo.Collection) error
 }
