@@ -1,4 +1,4 @@
-module plugins
+module github.com/ricnsmart/plugins
 
 go 1.12
 
