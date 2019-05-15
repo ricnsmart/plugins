@@ -43,12 +43,12 @@ type PMC350F struct {
 	} `bson:"Metrics"`
 }
 
-func (i *PMC350F) Find(id string, coll *mongo.Collection) (err error) {
+func (i PMC350F) Find(id string, coll *mongo.Collection) (err error) {
 	ctx, _ := context.WithTimeout(context.Background(), 10*time.Second)
 
 	filter := bson.M{ID: id}
 
-	err = coll.FindOne(ctx, filter).Decode(i)
+	err = coll.FindOne(ctx, filter).Decode(&i)
 
 	return
 }
