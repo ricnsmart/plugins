@@ -16,6 +16,7 @@ type GS524N struct {
 	DeviceID    string             `bson:"DeviceID"`
 	AlertSwitch bool               `bson:"AlertSwitch"`
 	SMSSwitch   bool               `bson:"SMSSwitch"`
+	SMSLimit    int                `bson:"SMSLimit"`
 }
 
 func (i *GS524N) Find(id string, coll *mongo.Collection) (err error) {
