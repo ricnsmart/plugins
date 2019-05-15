@@ -1,4 +1,4 @@
-package plugin
+package plugins
 
 type MetricTemplate struct {
 	WarnSwitch  bool    `bson:"WarnSwitch"`
