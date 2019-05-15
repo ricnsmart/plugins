@@ -4,7 +4,19 @@ import "go.mongodb.org/mongo-driver/mongo"
 
 const ID = "DeviceID"
 
-type MetricTemplate struct {
+type CurrentTemplate struct {
+	WarnSwitch  bool    `bson:"WarnSwitch"`
+	AlertSwitch bool    `bson:"AlertSwitch"`
+	SMSSwitch   bool    `bson:"SMSSwitch"`
+	Min         int     `bson:"Min"`
+	Max         int     `bson:"Max"`
+	Scale       int     `bson:"Scale"`
+	Warn        float32 `bson:"Warn"`
+	Alert       float32 `bson:"Alert"`
+	SPL         int     `bson:"SPL"`
+}
+
+type TemperatureTemplate struct {
 	WarnSwitch  bool    `bson:"WarnSwitch"`
 	AlertSwitch bool    `bson:"AlertSwitch"`
 	SMSSwitch   bool    `bson:"SMSSwitch"`
@@ -15,18 +27,16 @@ type MetricTemplate struct {
 	Alert       float32 `bson:"Alert"`
 }
 
-type CurrentTemplate struct {
-	MetricTemplate
-	SPL int `bson:"SPL"`
-}
-
-type TemperatureTemplate struct {
-	MetricTemplate
-}
-
 type VoltageTemplate struct {
-	MetricTemplate
-	WarnSMSSwitch bool `bson:"WarnSMSSwitch"`
+	WarnSwitch    bool    `bson:"WarnSwitch"`
+	AlertSwitch   bool    `bson:"AlertSwitch"`
+	SMSSwitch     bool    `bson:"SMSSwitch"`
+	Min           int     `bson:"Min"`
+	Max           int     `bson:"Max"`
+	Scale         int     `bson:"Scale"`
+	Warn          float32 `bson:"Warn"`
+	Alert         float32 `bson:"Alert"`
+	WarnSMSSwitch bool    `bson:"WarnSMSSwitch"`
 }
 
 type IOTemplate struct {
