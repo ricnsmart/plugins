@@ -19,7 +19,7 @@ type GS524N struct {
 	SMSLimit    int                `bson:"SMSLimit"`
 	Metrics     struct {
 		Battery struct {
-			Alert float64 `bson:"Alert"`
+			Alert int `bson:"Alert"`
 		} `bson:"Battery"`
 	} `bson:"Metrics"`
 }
