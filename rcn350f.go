@@ -21,9 +21,10 @@ type RCN350F struct {
 	SMSLimit     int                `bson:"SMSLimit"`
 
 	//  rcn350f特有
-	Buzzer     byte   `bson:"Buzzer"` // 蜂鸣器开关
-	BreakShort byte   `bson:"BreakShort"`
-	ICCID      string `bson:"ICCID"`
+	Buzzer     byte    `bson:"Buzzer"` // 蜂鸣器开关
+	BreakShort byte    `bson:"BreakShort"`
+	ICCID      string  `bson:"ICCID"`
+	Version    float32 `bson:"Version"` // 固件版本
 
 	Metrics struct {
 		DO1 IOTemplate          `bson:"DO1"`
@@ -43,7 +44,6 @@ type RCN350F struct {
 		Uc  VoltageTemplate     `bson:"Uc"`
 	} `bson:"Metrics"`
 }
-
 
 func (i *RCN350F) Find(id string, coll *mongo.Collection) (err error) {
 	ctx, _ := context.WithTimeout(context.Background(), 10*time.Second)
