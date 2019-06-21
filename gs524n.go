@@ -21,11 +21,6 @@ type GS524N struct {
 			AlertSwitch bool `bson:"AlertSwitch"`
 			SMSSwitch   bool `bson:"SMSSwitch"`
 		} `bson:"Battery"`
-		SmokeConcentration struct {
-			Alert       int  `bson:"Alert"`
-			AlertSwitch bool `bson:"AlertSwitch"`
-			SMSSwitch   bool `bson:"SMSSwitch"`
-		} `bson:"SmokeConcentration"`
 	} `bson:"Metrics"`
 }
 
