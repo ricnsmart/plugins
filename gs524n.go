@@ -9,18 +9,23 @@ import (
 )
 
 type GS524N struct {
-	ID          primitive.ObjectID `bson:"_id,omitempty"`
-	CreateAt    string             `bson:"CreateAt"`
-	SN          string             `bson:"SN"`
-	UpdateAt    string             `bson:"UpdateAt"`
-	DeviceID    string             `bson:"DeviceID"`
-	AlertSwitch bool               `bson:"AlertSwitch"`
-	SMSSwitch   bool               `bson:"SMSSwitch"`
-	SMSLimit    int                `bson:"SMSLimit"`
-	Metrics     struct {
+	ID       primitive.ObjectID `bson:"_id,omitempty"`
+	CreateAt string             `bson:"CreateAt"`
+	SN       string             `bson:"SN"`
+	UpdateAt string             `bson:"UpdateAt"`
+	DeviceID string             `bson:"DeviceID"`
+	SMSLimit int                `bson:"SMSLimit"`
+	Metrics  struct {
 		Battery struct {
-			Alert int `bson:"Alert"`
+			Alert       int  `bson:"Alert"`
+			AlertSwitch bool `bson:"AlertSwitch"`
+			SMSSwitch   bool `bson:"SMSSwitch"`
 		} `bson:"Battery"`
+		SmokeConcentration struct {
+			Alert       int  `bson:"Alert"`
+			AlertSwitch bool `bson:"AlertSwitch"`
+			SMSSwitch   bool `bson:"SMSSwitch"`
+		} `bson:"SmokeConcentration"`
 	} `bson:"Metrics"`
 }
 
