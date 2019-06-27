@@ -1,11 +1,7 @@
 package plugins
 
 import (
-	"context"
-	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
-	"go.mongodb.org/mongo-driver/mongo"
-	"time"
 )
 
 type GS524N struct {
@@ -30,14 +26,4 @@ type GS524N struct {
 			SMSSwitch   bool `bson:"SMSSwitch"`
 		} `bson:"TearDown"`
 	} `bson:"Metrics"`
-}
-
-func (i *GS524N) Find(id string, coll *mongo.Collection) (err error) {
-	ctx, _ := context.WithTimeout(context.Background(), 10*time.Second)
-
-	filter := bson.M{ID: id}
-
-	err = coll.FindOne(ctx, filter).Decode(i)
-
-	return
 }

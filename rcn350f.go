@@ -1,11 +1,7 @@
 package plugins
 
 import (
-	"context"
-	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
-	"go.mongodb.org/mongo-driver/mongo"
-	"time"
 )
 
 type RCN350F struct {
@@ -43,14 +39,4 @@ type RCN350F struct {
 		Ub  VoltageTemplate     `bson:"Ub"`
 		Uc  VoltageTemplate     `bson:"Uc"`
 	} `bson:"Metrics"`
-}
-
-func (i *RCN350F) Find(id string, coll *mongo.Collection) (err error) {
-	ctx, _ := context.WithTimeout(context.Background(), 10*time.Second)
-
-	filter := bson.M{ID: id}
-
-	err = coll.FindOne(ctx, filter).Decode(i)
-
-	return
 }
