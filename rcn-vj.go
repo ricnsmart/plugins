@@ -20,6 +20,7 @@ type RCNVJ struct {
 	Version      float32            `bson:"Version"`
 	GPRSRSSI     int                `bson:"GPRSRSSI"`
 	ModulesNum   int                `bson:"ModulesNum"`
+	SMSLimit     int                `bson:"SMSLimit"`
 }
 
 func (i *RCNVJ) Find(id string, coll *mongo.Collection) (err error) {
