@@ -15,7 +15,6 @@ type PMC350 struct {
 	CT           int                `bson:"CT"`
 	Interval     int                `bson:"Interval"`
 	SMSLimit     int                `bson:"SMSLimit"`
-	SinglePhase  bool               `bson:"SinglePhase"`
 	Metrics      struct {
 		Ia CurrentTemplate     `bson:"Ia"`
 		Ib CurrentTemplate     `bson:"Ib"`

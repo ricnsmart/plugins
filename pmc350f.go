@@ -15,7 +15,6 @@ type PMC350F struct {
 	CT           int                `bson:"CT"`
 	Interval     int                `bson:"Interval"`
 	SMSLimit     int                `bson:"SMSLimit"`
-	SinglePhase  bool               `bson:"SinglePhase"`
 
 	// pmc350f特有
 	AlarmSound uint16 `bson:"AlarmSound"`

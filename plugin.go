@@ -26,6 +26,7 @@ type TemperatureTemplate struct {
 }
 
 type VoltageTemplate struct {
+	Disable       bool    `bson:"Disable"`
 	WarnSwitch    bool    `bson:"WarnSwitch"`
 	AlertSwitch   bool    `bson:"AlertSwitch"`
 	SMSSwitch     bool    `bson:"SMSSwitch"`
