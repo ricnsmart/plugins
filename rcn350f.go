@@ -15,6 +15,7 @@ type RCN350F struct {
 	CT           int                `bson:"CT"`
 	Interval     int                `bson:"Interval"`
 	SMSLimit     int                `bson:"SMSLimit"`
+	SinglePhase  bool               `bson:"SinglePhase"`
 
 	//  rcn350f特有
 	Buzzer     byte    `bson:"Buzzer"` // 蜂鸣器开关
