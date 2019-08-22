@@ -11,6 +11,7 @@ type GS524N struct {
 	UpdateAt string             `bson:"UpdateAt"`
 	DeviceID string             `bson:"DeviceID"`
 	SMSLimit int                `bson:"SMSLimit"`
+	OneNetID string             `bson:"OneNetID"`
 	Metrics  struct {
 		Battery struct {
 			Alert       int  `bson:"Alert"`
