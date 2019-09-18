@@ -1,5 +1,7 @@
 package plugins
 
+import "go.mongodb.org/mongo-driver/bson/primitive"
+
 type Common struct {
 	ID         primitive.ObjectID `bson:"_id,omitempty"`
 	CreateAt   string             `bson:"CreateAt"`
