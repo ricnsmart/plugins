@@ -10,6 +10,7 @@ type RCNVJ struct {
 	SN           string             `bson:"SN"`
 	UpdateAt     string             `bson:"UpdateAt"`
 	DeviceID     string             `bson:"DeviceID"`
+	DeviceType   int                `bson:"DeviceType"`
 	GPRSOperator int                `bson:"GPRSOperator"`
 	DomainRecord string             `bson:"DomainRecord"`
 	Interval     int                `bson:"Interval"`

@@ -16,6 +16,7 @@ require (
 
 replace (
 	cloud.google.com/go => github.com/googleapis/google-cloud-go v0.38.0
+	go.mongodb.org/mongo-driver => github.com/mongodb/mongo-go-driver v1.1.1
 	golang.org/x/crypto => github.com/golang/crypto v0.0.0-20190510104115-cbcb75029529
 	golang.org/x/exp => github.com/golang/exp v0.0.0-20190510132918-efd6b22b2522
 	golang.org/x/image => github.com/golang/image v0.0.0-20190507092727-e4e5bf290fec

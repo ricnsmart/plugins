@@ -1,6 +1,13 @@
 package plugins
 
-const ID = "DeviceID"
+type Common struct {
+	ID         primitive.ObjectID `bson:"_id,omitempty"`
+	CreateAt   string             `bson:"CreateAt"`
+	UpdateAt   string             `bson:"UpdateAt"`
+	DeviceID   string             `bson:"DeviceID"`
+	SN         string             `bson:"SN"`
+	DeviceType int                `bson:"DeviceType"`
+}
 
 type CurrentTemplate struct {
 	WarnSwitch  bool    `bson:"WarnSwitch"`
