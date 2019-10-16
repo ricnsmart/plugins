@@ -10,8 +10,8 @@ type (
 		DeviceID   string             `bson:"DeviceID"`
 		SN         string             `bson:"SN"`
 		DeviceType int                `bson:"DeviceType"`
-		Max        int                `bson:"Max"`
-		Min        int                `bson:"Min"`
+		Max        float64            `bson:"Max"`
+		Min        float64            `bson:"Min"`
 	}
 
 	TK83 struct {
@@ -21,10 +21,10 @@ type (
 		DeviceID   string             `bson:"DeviceID"`
 		SN         string             `bson:"SN"`
 		DeviceType int                `bson:"DeviceType"`
-		Length     int                `bson:"Length"`
-		Width      int                `bson:"Width"`
-		Height     int                `bson:"Height"`
-		Max        int                `bson:"Max"`
-		Min        int                `bson:"Min"`
+		Length     float64            `bson:"Length"`
+		Width      float64            `bson:"Width"`
+		Height     float64            `bson:"Height"`
+		Max        float64            `bson:"Max"`
+		Min        float64            `bson:"Min"`
 	}
 )
